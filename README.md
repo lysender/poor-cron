@@ -22,7 +22,7 @@ and resets after 1440 cycle which roughly equivalent to 24 hours ++ or so.
 The default sleeps for a minute and cycles for 1440 rounds. 
 
 `poor-cron.sh` - you may not have to configure this file. This is the
-front end of the cron where the infinite loop/sleep happends.
+front end of the cron where the infinite loop/sleep happens.
 
 `poor-cron-worker.sh` - this is where you put your curl commands that
 will in turn call your web based cron jobs of your application.
@@ -31,11 +31,11 @@ will in turn call your web based cron jobs of your application.
 
 For the scheduler to work, you need to think of the shedule you want.
 Currently, the cron does not work on exact time/date and will never be.
-It is design for jobs on certain intervals such as every 5 minutes,
+It is designed for jobs on certain intervals such as every 5 minutes,
 every 30 minutes or every day (once a day).
 
 The `poor-cron.sh` will pass a minute parameter to the `poor-cron-worker.sh`
-and using modulus we can achieve when scheduling. For example:
+and using modulus we can achieve simple scheduling. For example:
 
 To run jobs every 5 minutes: MINUTE % 5 = 0
 To run jobs every 30 minutes: MINUTE % 30 = 0
